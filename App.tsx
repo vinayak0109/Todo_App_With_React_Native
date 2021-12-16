@@ -1,12 +1,10 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import Todo from './src';
 
 const App = () => {
-  return (
-    <View>
-      <Text>Hello world!</Text>
-    </View>
-  );
+	return (
+		<Todo />
+	);
 };
 
 export default App;
