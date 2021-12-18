@@ -5,14 +5,18 @@ const styles = StyleSheet.create({
 		flex: 1,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
+		alignItems: 'flex-start',
 		backgroundColor: '#96938f',
-		padding: 10,
+		paddingHorizontal: 15,
+		paddingVertical: 10,
 		marginVertical: 10,
-		borderRadius: 8
+		borderRadius: 8,
+		maxHeight: 100
 	},
 	title: {
+		maxWidth: '85%',
 		color: 'black',
-		fontWeight: 'bold',
+		// fontWeight: 'bold',
 	}
 });
 

@@ -25,6 +25,7 @@ const AddTodo = ({addTodo}: Props) => {
 				placeholder='Add new todo...'
 				onChangeText={handleChange}
 				value={text}
+				multiline
 			/>
 			<Button
 				title='Add Todo'

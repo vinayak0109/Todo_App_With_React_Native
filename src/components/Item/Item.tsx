@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Text, TouchableOpacity, View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './Item.styles';
 import { itemType } from './Item.types';
 
@@ -13,14 +14,28 @@ const Item = ({item, removeTodo}: Props) => {
 		console.log(item.title);
 	};
 
+	const onDeleteHandler = (key: string): void => {
+		Alert.alert('Confirmation!', 'Are you sure you want to delete?',[
+			{
+				text: 'Cancel',
+				onPress: () => console.log('Cancel')
+			},
+			{
+				text: 'Ok',
+				onPress: () => removeTodo(key)
+			}
+		]);
+	};
+
 	return (
 		<TouchableOpacity onPress={() => onPressHandler(item)}>
 			<View style={styles.item}>
-				<Text style={styles.title}>{item.title}</Text>
-				<Button
-					title='R'
+				<Text style={styles.title} numberOfLines={4}>{item.title}</Text>
+				<Icon
+					name="trash" 
+					size={25}
 					color='black'
-					onPress={() => removeTodo(item.key)}
+					onPress={() => onDeleteHandler(item.key)}
 				/>
 			</View>
 		</TouchableOpacity>
